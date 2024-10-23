@@ -38,4 +38,4 @@ if uploaded_file is not None:
 
     prediction = predict_image(model, image)
 
-    st.write(f'Prediction: {prediction}')
+    st.markdown(f'<h1>Prediction: {prediction}</h1>', unsafe_allow_html=True)
