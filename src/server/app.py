@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 def load_model():
     model = MNISTModel()
-    model.load_state_dict(torch.load('models/model_v1.pkl'))
+    model.load_state_dict(torch.load('models/model_v2.pkl'))
     model.eval()
     return model
 

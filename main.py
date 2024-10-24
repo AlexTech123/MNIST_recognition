@@ -5,13 +5,13 @@ from src.data.load_data import load_data
 from src.models.train import train_model
 from src.models.evaluate import evaluate_model
 
-MODEL_PATH = 'models/model_v1.pkl'
+MODEL_PATH = 'models/model_v2.pkl'
 
 
 def train_and_save_model():
     train_loader, test_loader = load_data()
 
-    model = train_model(train_loader, epochs=5)
+    model = train_model(train_loader, epochs=2)
 
     evaluate_model(model, test_loader)
 
