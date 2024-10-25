@@ -1,6 +1,15 @@
+import inspect
+import os
+import sys
+
 import torch
 from torchvision import datasets
-from src.data.preprocess import get_transform
+
+cmd_folder = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile( inspect.currentframe() ))[0]))
+if cmd_folder not in sys.path:
+    sys.path.insert(0, cmd_folder)
+
+from preprocess import get_transform
 
 def load_data(batch_size=64):
     transform = get_transform()

@@ -1,10 +1,20 @@
+import inspect
+import os
+import sys
+
 import streamlit as st
 import torch
-from src.models.model import MNISTModel
-from src.models.predict import predict
-from src.data.preprocess import get_transform
 from PIL import Image
 from torch.utils.data import DataLoader, TensorDataset
+
+cmd_folder = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile( inspect.currentframe() ))[0]))
+if cmd_folder not in sys.path:
+    sys.path.insert(0, cmd_folder + "/..")
+
+from models.model import MNISTModel
+from models.predict import predict
+from data.preprocess import get_transform
+
 
 
 def load_model():
